@@ -1,15 +1,14 @@
+from math import sqrt
 a = float(input("Введіть коефіцієнт a: "))
 b = float(input("Введіть коефіцієнт b: "))
 c = float(input("Введіть коефіцієнт c: "))
 
 discriminant = b**2 - 4 * a * c
-
-if discriminant < 0:
+try:
+    x1 = (-b + sqrt(discriminant)) / (2 * a)
+    x2 = (-b - sqrt(discriminant)) / (2 * a) 
+    print(f"Рівняння має корені: x1 = {x1}, x2 = {x2}")
+except ValueError as error:
     print("Рівняння не має дійсних коренів.")
-elif discriminant == 0:
-    x = -b / (2 * a)
-    print(f"Рівняння має один корінь: x = {x}")
-else:
-    x1 = (-b + discriminant ** 0.5) / (2 * a)
-    x2 = (-b - discriminant ** 0.5) / (2 * a)
-    print(f"Рівняння має два корені: x1 = {x1}, x2 = {x2}")
+finally:
+    print("Розрахунок завершено")
