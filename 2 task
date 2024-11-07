@@ -1,0 +1,6 @@
+a = float(input("Введіть перше число: "))
+b = float(input("Введіть друге число: "))
+try:
+    print('Result: ',a/b)
+except ZeroDivisionError:
+    print('Cant devide on zero')
